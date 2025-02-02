@@ -375,6 +375,22 @@ function Greeting() {
 //call , run , execute
 
 Greeting();
+//function expression
+
+function SayHello(name) {
+    console.log(`Hello ${name}`);
+
+}
+
+SayHello("Shada");
+
+//return -> function
+
+function add(a, b) {
+    return a + b;
+}
+
+add(4,3);
 
 
 
