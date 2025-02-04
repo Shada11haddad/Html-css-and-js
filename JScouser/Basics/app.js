@@ -391,11 +391,69 @@ function add(a, b) {
 }
 
 add(4,3);
+const sumAdd = add(32.12);
+console.log(sumAdd);
 
+//------------Challenge 7-----------------//
 
+function Myfunction(P1 ,P2) {
+    multi = P1 * P2;
+
+    return multi;
+}
+
+Myfunction(5, 10);
 
 //--------------Function Types-----------//
+//function declaration
+function Greating(userNAem) {
+    console.log('Hello ${userNAem}');
+}
+
+Greating ("shada")
+//function expression
+const Welcome = function (userName) {
+    console.log('Welcome ${userName}');
+} 
 //--------------Callback Functions-----------//
+function showCallFnuc(fn){
+    const value = 10;
+    fn(value)
+
+}
+showCallFnuc(function (value){
+    console.log(value);
+})
+
+
+function OP(name , cb){
+    console.log('Hello ${name}');
+    cb()
+}
+
+function cb(){
+    console.log('I am a callback function')
+
+}
+
+OP("shada",cb)
+
+//--------------challenge 8-----------//
+function ShowCallFUnction(fn){
+    const value = 10;
+    fn(value);
+}
+ShowCallFUnction(function(value){
+    console.log(value);
+})
 //-------------- Variable Scope-----------//
+// global scope
+let textMessage = "Hello";//global scope 
+console.log(textMessage);
+// local scope
+function showMessage(){
+    let textMessage = "Hello"; //local scope
+    console.log(textMessage );
+}
 //--------------Object Methods-----------//
 //--------------JSON Handling-----------//
