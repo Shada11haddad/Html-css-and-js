@@ -1,0 +1,11 @@
+ {
+    "name": "John",
+    "age": 30,
+    "city": "New York",
+    "hobbies": ["Reading", "Travelling", "Coding"],
+    "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY"
+    }
+}

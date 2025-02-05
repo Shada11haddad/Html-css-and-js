@@ -1,11 +1,12 @@
+import { console } from "inspector";
+import { type } from "os";
 // Variables
 // Reserved keywords  - var, let, const
 // variable name - camelCase
 // var name = 'John Doe';
 //teyp of variable
 
-const { console } = require("inspector");
-const { type } = require("os");
+
 
 const name = "shada";
 
@@ -456,4 +457,43 @@ function showMessage(){
     console.log(textMessage );
 }
 //--------------Object Methods-----------//
+function greetHuman() {
+    return "Hello, I am a human. My name is ${human.name} and I am ${human.age} years old.";
+}
+
+const human = {
+    name: "Shada",
+    age: 22,
+    greet: greetHuman,
+    jop: function (){}
+};
 //--------------JSON Handling-----------//
+{
+    "name"; "Shada",
+        "age"; 22
+}
+
+const personJson = {
+    "name": "John",
+    "age": 30,
+    "city": "New York",
+    "hobbies": ["Reading", "Travelling", "Coding"],
+    "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY"
+    }
+}
+
+//--------------JSON.stringfy-----------//
+const personJsonString = JSON.stringify(personJson);//turn the object into a string as json data
+const personObject = JSON.parse(personJsonString);//turn the string into an object
+console.log(personObject);
+//--------------Date Object-----------//
+
+const today = new Date();
+console.log(today);
+console.log(today.toString());//convert date object to string
+
+//return the year , month , day , hours , minutes , seconds , milliseconds
+const currentDate = new Date(2025, 0, 1, 0, 0, 0, 0);
