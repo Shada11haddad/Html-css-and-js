@@ -604,3 +604,7 @@ setTimeout(function() {
     clearInterval(Intervald);
     console.log('interval stopped');
 },5000);
+// ================================
+//             finished 
+//              part 1
+// ================================
