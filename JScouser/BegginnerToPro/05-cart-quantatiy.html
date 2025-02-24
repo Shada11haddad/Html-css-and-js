@@ -1,39 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart Quantity</title>
 </head>
 <body>
-    <h4>Cart Quantity</h4>
-    <button onclick="
-    console.log(`Cart Quantity:${cartQuantity}`);
-    " >Show Quantity</button>
-    <button onclick = 
-    "cartQuantity ++;">Add to Cart</button>
 
-    <button onclick="cartQuantity += 2;">+2</button>
-    <button onclick="cartQuantity -= 2;">-2</button>
-    <button onclick="cartQuantity += 3;">+3</button>
-    <button onclick="cartQuantity -= 3;">-3</button>
-    <button onclick="cartQuantity += 4;">+4</button>
-    <button onclick="cartQuantity -= 4;">-4</button>
-    <button onclick="cartQuantity += 5;">+5</button>
-    <button onclick="cartQuantity -= 5;">-5</button>
+    <button onclick="showCartQuantity()">Show Quantity</button>
 
-    <button onclick="cartQuantity = cartQuantity +3; ">+3</button>
-<button onclick="cartQuantity--;">Remove cart</button>
-<button onclick="cartQuantity--;">Remove cart</button>
-    <button onclick=" cartQuantity = 0; 
-    console.log('Cart was reset');
-    console.log(`Cart Quantity:${cartQuantity}`);
+    <button onclick="updateCartQuantity(1)">Add to Cart</button>
+    <button onclick="updateCartQuantity(2)">+2</button>
+    <button onclick="updateCartQuantity(3)">+3</button>
+    <button onclick="updateCartQuantity(4)">+4</button>
+    <button onclick="updateCartQuantity(5)">+5</button>
 
-    ">Reset Cart</button>
+    <button onclick="updateCartQuantity(-1)">Remove from cart</button>
+    <button onclick="updateCartQuantity(-2)">-2</button>
+    <button onclick="updateCartQuantity(-3)">-3</button>
+
+    <button onclick="resetCart()">Reset Cart</button>
 
     <script>
 let cartQuantity = 0;
+const maxCartLimit = 10;
+
+function showCartQuantity() {
+        console.log(`Cart quantity: ${cartQuantity}`);
+    }
+
+    function updateCartQuantity(change) {
+        if (cartQuantity + change > maxCartLimit) {
+        alert("The cart is full");
+        return;
+        }
+
+        if (cartQuantity + change < 0) {
+        alert("Not enough items in the cart");
+        return;
+        }
+
+        cartQuantity += change;
+        console.log(`Cart quantity: ${cartQuantity}`);
+    }
+
+    function resetCart() {
+        cartQuantity = 0;
+        console.log("Cart was reset.");
+        console.log(`Cart quantity: ${cartQuantity}`);
+    }
     </script>
-    
 </body>
 </html>
