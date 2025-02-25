@@ -1,0 +1,106 @@
+/* Basic resets & layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.5;
+}
+section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Meet Our Team Section */
+.team-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.team-card {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 220px;
+  max-width: 300px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+/* Flip Button */
+.flip-button-container {
+  text-align: center;
+  margin: 20px 0;
+}
+.flip-button-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* PMO & OSD container side by side */
+.pmo-osd-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* So they wrap on smaller screens */
+}
+
+/* Flip row by reversing flex-direction */
+.pmo-osd-container.flip-row {
+  flex-direction: row-reverse;
+}
+
+/* Each box for PMO or OSD */
+.info-box {
+  background: #fff;
+  flex: 1;
+  min-width: 300px; /* Ensures they don't get too narrow */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+
+/* Common styling inside each info box */
+.img-container {
+  width: 100%;
+  height: 200px;
+  background: #e0e0e0;
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  background: url('https://via.placeholder.com/800x200') center/cover no-repeat;
+}
+.section-content {
+  padding: 20px;
+}
+.title-style {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.title-style .line {
+  width: 50px;
+  height: 4px;
+  background: #333;
+  margin-right: 10px;
+}
+.title-style .title {
+  font-size: 24px;
+}
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
