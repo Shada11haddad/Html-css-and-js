@@ -1,19 +1,16 @@
-import mongoose from "mongoose";    
-import dotenv from 'dotenv';
+import mongoose from "mongoose";
 
-dotenv.config();
+// Use environment variable if set; otherwise, fallback to the provided connection string.
+const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://shadahadad123:tDWiEKOI68wWdV7A@cluster0.tg7cx.mongodb.net/myDatabase?retryWrites=true&w=majority";
 
+// Async function to connect to MongoDB.
 export const connectDB = async () => {
-
-    
     try {
-        const conn = await mongoose.connect(process.env.MONGO_URI)
-        console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold);
-        mongoose.connection.on('error', (err) => {
-            console.log(`MongoDB connection error: ${err}`.red.underline.bold);
-        });
+        // With Mongoose 6+, the connection automatically uses the new URL parser and unified topology.
+        const conn = await mongoose.connect(MONGO_URI);
+        console.log(`MongoDB Connected: ${conn.connection.host}`);
     } catch (error) {
-        console.error(`Error: ${error.message}`.red.underline.bold);
-        process.exit(1); 
+        console.error(`Error: ${error.message}`);
+        process.exit(1);
     }
 };
